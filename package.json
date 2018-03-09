@@ -1,0 +1,33 @@
+{
+  "name": "recipebook",
+  "version": "1.0.0",
+  "description": "Recipe Manager made with Nodejs, Expressjs, PostGres",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/oshanshrestha/recipebook.git"
+  },
+  "keywords": [
+    "recipe-book",
+    "nodejs",
+    "expressjs",
+    "postgres",
+    "learn"
+  ],
+  "author": "Oshan Shrestha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oshanshrestha/recipebook/issues"
+  },
+  "homepage": "https://github.com/oshanshrestha/recipebook#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.0",
+    "dust": "^0.3.0",
+    "express": "^4.16.2",
+    "pg": "^7.4.1"
+  }
+}
