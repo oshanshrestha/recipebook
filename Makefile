@@ -1,0 +1,10 @@
+PGHOST='localhost'
+PGUSER='LearnPostGres'
+PGDATABASE='recipeBook'
+PGPASSWORD='APPMSXPS'
+PGPORT=5432
+
+all: start PGHOST PGUSER PGDATABASE PGPASSWORD PGPORT
+
+start:
+	node app

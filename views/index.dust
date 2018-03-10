@@ -1,0 +1,18 @@
+{> "layout" /}
+
+{< body }
+    {#recipes}
+        <div class="card">
+            <h4>{name}
+                <button class="btn btn-default float-right" type="button" data-toggle="collapse" data-target="#recipe_{id}" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-eye"></i>            </button></h4>
+            <div class="collapse" id="recipe_{id}">
+                <div class="card card-body no-border">
+                    <p class="label"><b>Ingredients</b></p>
+                    <p>{ingredients}</p>
+                    <p class="label"><b>Directions</b></p>
+                    <p>{directions}</p>
+                </div>
+            </div>
+        </div>
+    {/recipes}
+{/ body }

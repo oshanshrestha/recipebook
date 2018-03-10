@@ -23,10 +23,12 @@
     "url": "https://github.com/oshanshrestha/recipebook/issues"
   },
   "homepage": "https://github.com/oshanshrestha/recipebook#readme",
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.18.2",
     "consolidate": "^0.15.0",
     "dust": "^0.3.0",
+    "dustjs-helpers": "^1.7.4",
+    "dustjs-linkedin": "^2.7.5",
     "express": "^4.16.2",
     "pg": "^7.4.1"
   }
