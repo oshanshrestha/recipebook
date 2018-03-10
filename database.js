@@ -1,13 +1,13 @@
 const { Client } = require('pg')
 
 var DBconnecter = function(callback) {
-    const client = new Client({
+    const client = new Client(/*{
         user: 'LearnPostGres',
         host: 'localhost',
         database: 'recipeBook',
         password: 'APPMSXPS',
         port: 5432,
-    })
+    }*/)
         
     client.connect()
 
