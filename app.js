@@ -42,7 +42,7 @@ app.get('/', function(req, res) {
 app.post('/add', function(req, res) {
     console.info("POST request made on '/'")
     DBconnecter.insertData(req.body.name, req.body.ingredients, req.body.directions , function(response) {
-        /*res.redirect('/')*/
+        res.redirect('/')
     })
 })
 

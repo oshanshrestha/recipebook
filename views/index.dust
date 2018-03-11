@@ -8,7 +8,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <form method="POST" action="./">                
                     <div class="modal-header">
@@ -27,7 +27,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-danger submit"
-                        data-dismiss="modal"
                         >Add</button>
                     </div>
                 </form>
@@ -58,6 +57,7 @@
                         <button class="btn btn-danger delete-recipe"
                         type="button"
                         data-id='{id}'
+                        data-name='{name}'
                         aria-expanded="false"><i class="fas fa-trash"></i></button>
                     </p>
                 </div>
@@ -69,7 +69,7 @@
 
     <!-- Edit Recipe -->
     <div class="modal fade" id="editFormModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <form method="POST" action="./">
                     <input type="hidden" name="id" id="edit-form-id">
@@ -89,7 +89,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary edit"
-                        data-dismiss="modal"
                         >Edit</button>
                     </div>
                 </form>

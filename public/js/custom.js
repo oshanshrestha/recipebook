@@ -8,15 +8,28 @@ $(
             directions: $('#directions').val()
         }
 
-        $.ajax({
-            type: 'POST',
-            url: './add',
-            data: content,
-            success: function(result) {
-                console.log(result)
-                location.reload()
+        if (content.name !== "") {
+            if (content.ingredients !== "") {
+                    if (content.directions !== "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: './add',
+                        data: content,
+                        success: function(result) {
+                            console.log(result)
+                            location.reload()
+                            $('#formModal').modal('hide')
+                        }
+                    })
+                } else {
+                    alert("Sorry, what is a recipe about without directions?")
+                }
+            } else {
+                alert("Sorry, how do you cook without any ingredients?")
             }
-        })
+        } else {
+            alert("Sorry, if you can't give it a name, I can't add this to your recipe.")
+        }
     }),
     $('.edit-recipe').on('click', function() {
         $('#edit-form-name').val($(this).data('name'))
@@ -33,15 +46,30 @@ $(
             ingredients: $('#edit-form-ingredients').val(),
             directions: $('#edit-form-directions').val()
         }
-
-        $.ajax({
-            type: 'POST',
-            url: './edit',
-            data: content,
-            success: function(result) {
-                location.reload()
+        
+        if (content.name !== "") {
+            if (content.ingredients !== "") {
+                    if (content.directions !== "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: './edit',
+                        data: content,
+                        success: function(result) {
+                            console.log(result)
+                            location.reload()
+                            $('#formModal').modal('hide')
+                        }
+                    })
+                } else {
+                    alert("Sorry, what is a recipe about without directions?")
+                }
+            } else {
+                alert("Sorry, how do you cook without any ingredients?")
             }
-        })
+        } else {
+            alert("Sorry, if you can't give it a name, I can't add this to your recipe.")
+        }
+
     }),
     $('.delete-recipe').on('click', function(e) {
         e.preventDefault()
@@ -50,14 +78,16 @@ $(
             id: $(this).data('id')
         }
 
-        $.ajax({
-            type: 'POST',
-            url: './delete',
-            data: content,
-            success: function(result) {
-                location.reload()
-            }
-        })
+        if (confirm('Delete recipe "' + $(this).data('name').trim() + '"?')) {
+            $.ajax({
+                type: 'POST',
+                url: './delete',
+                data: content,
+                success: function(result) {
+                    location.reload()
+                }
+            })
+        }
     })
 
 )
