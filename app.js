@@ -32,11 +32,35 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 // Routes to get request
 app.get('/', function(req, res) {
-    DBconnecter(function(response) {
+    console.info("GET request made on '/'")
+    DBconnecter.getAll(function(response) {
         res.render('index', {recipes: response.rows})
     })
 })
 
+// Add Recipe Handler
+app.post('/add', function(req, res) {
+    console.info("POST request made on '/'")
+    DBconnecter.insertData(req.body.name, req.body.ingredients, req.body.directions , function(response) {
+        /*res.redirect('/')*/
+    })
+})
+
+// Edit Recipe Handler
+app.post('/edit', function(req, res) {
+    console.info("POST request made on '/edit'")
+    DBconnecter.alterData(req.body.id, req.body.name, req.body.ingredients, req.body.directions , function(response) {
+        res.redirect('/')
+    })
+})
+
+// Delete Recipe Handler
+app.post('/delete', function(req, res) {
+    console.log("POST request made on '/delete")
+    DBconnecter.deleteData(req.body.id, function(response) {
+        res.redirect('/')
+    })
+})
 
 
 

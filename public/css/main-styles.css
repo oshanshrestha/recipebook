@@ -1,20 +1,23 @@
 body {
     padding: 20px;
-    background: #f9f9f9;
+    background: #d1d1d1;
 }
 .middle {
-    max-width: 720px;
+    max-width: 780px;
     margin: 50px auto;
     padding: 20px 20px 1px 20px;
-    background: #aa000022;
+    background: linear-gradient(145deg, #aa000044, #aa000000);
 }
 .card {
     padding: 20px;
     margin-bottom: 20px;
-    transition: 1.0s ease height;
+    transition: 1.0s ease;
 }
 .card h4 {
     font-family: 'Vidaloka', serif;
+}
+.card h4 span {
+    width: calc(100% - 75px);
 }
 p {
     font-family: 'Montserrat', sans-serif;
@@ -26,9 +29,70 @@ p {
     font-family: 'Merriweather', serif;
     color: mediumpurple;
 }
+.btn {
+    transition: 0.5s ease;
+    border: 1px solid #3330;
+    border-radius: 0px;
+}
+.btn:hover {
+    border: 1px solid #333a;
+    border-radius: 0px;
+}
 .btn:focus {
     box-shadow: 0 0 0 #0000;
 }
+.transparent {
+    background-color: #0000;
+}
+.addRecipe {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    padding: 15px 0;
+    font-family: 'Merriweather', serif;
+    background: mediumslateblue;
+}
 .no-border {
     border-width: 0px;
+}
+label {
+    margin-top: 10px;
+}
+input[type="text"]:focus, textarea:focus, .form-control:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px #0000;
+}
+input[type="text"], textarea {
+    margin-bottom: 10px;
+}
+textarea {
+    resize: none;
+}
+.control button {
+    background: #0000;
+    margin-left: -1px;
+    border: 1px #333a solid;
+}
+.control .btn-primary, .control .btn-danger {
+    color: black;
+}
+.control .btn-primary:hover, .control .btn-danger:hover {
+    color: white;
+}/*
+footer {
+    padding: 0 20px;
+}*/
+footer p {
+    text-align: center;
+    color: #000;
+}
+footer p a {
+    color: #333b;
+}
+.brand {
+    font-weight: bolder;
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Rammetto One', cursive;
+    font-size: 40px;
 }

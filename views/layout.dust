@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipe Book</title>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Vidaloka" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Rammetto+One|Vidaloka" rel="stylesheet">
     <link rel="stylesheet" href="static/css/bootstrap.css">
     <link rel="stylesheet" href="static/css/main-styles.css">
 </head>
 <body>
     <div class="container">
+            <h5 class="brand">_ReciPie_</h5>
         <div class="middle">
             {+ body /}
         </div>
+        <footer>
+            {> "footer" /}
+        </footer>
     </div>
 
     <script src="static/js/jquery-3.3.1.min.js"></script>
