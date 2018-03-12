@@ -21,9 +21,9 @@
                         <label for="recipe-name">Name</label>
                         <input name="recipe-name" id="recipe-name" class="form-control" type="text" placeholder="Name" required>
                         <label for="ingredients">Ingredients</label>
-                        <textarea name="ingredients" id="ingredients" rows="3" class="form-control" type="text" placeholder="Ingredients" required></textarea>
+                        <textarea name="ingredients" id="ingredients" rows="2" class="form-control" type="text" placeholder="Ingredients" required></textarea>
                         <label for="directions">Directions</label>
-                        <textarea name="directions" id="directions" rows="3" class="form-control" type="text" placeholder="Directions" required></textarea>
+                        <textarea name="directions" id="directions" rows="5" class="form-control" type="text" placeholder="Directions" required></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-danger submit"
@@ -46,23 +46,28 @@
                     <p>{directions}</p>
                     <p class="control">
                         <button class="btn btn-primary edit-recipe"
-                        type="button"
-                        aria-expanded="false"
-                        data-toggle="modal"
-                        data-target="#editFormModal"
-                        data-id='{id}'
-                        data-name='{name}'
-                        data-ingredients='{ingredients}'
-                        data-directions='{directions}'><i class="fas fa-edit"></i></button>
+                            type="button"
+                            aria-expanded="false"
+                            data-toggle="modal"
+                            data-target="#editFormModal"
+                            data-id='{id}'
+                            data-name='{name}'
+                            data-ingredients='{ingredients}'
+                            data-directions='{directions}'><i class="fas fa-edit"></i>
+                        </button>
                         <button class="btn btn-danger delete-recipe"
-                        type="button"
-                        data-id='{id}'
-                        data-name='{name}'
-                        aria-expanded="false"><i class="fas fa-trash"></i></button>
+                            type="button"
+                            data-id='{id}'
+                            data-name='{name}'
+                            aria-expanded="false"><i class="fas fa-trash"></i>
+                        </button>
                     </p>
                 </div>
             </div>
         </div>
+    {:else}
+        <h4>Sorry, no recipes saved yet.</h4>
+        <p><a href="#" data-toggle="modal" data-target="#formModal">Get started</a> with your first one.</p>
     {/recipes}
 
 
@@ -83,9 +88,9 @@
                         <label for="recipe-name">Name</label>
                         <input name="recipe-name" id="edit-form-name" class="form-control" type="text" placeholder="Name" required>
                         <label for="ingredients">Ingredients</label>
-                        <textarea name="ingredients" id="edit-form-ingredients" rows="3" class="form-control" type="text" placeholder="Ingredients" required></textarea>
+                        <textarea name="ingredients" id="edit-form-ingredients" rows="2" class="form-control" type="text" placeholder="Ingredients" required></textarea>
                         <label for="directions">Directions</label>
-                        <textarea name="directions" id="edit-form-directions" rows="3" class="form-control" type="text" placeholder="Directions" required></textarea>
+                        <textarea name="directions" id="edit-form-directions" rows="5" class="form-control" type="text" placeholder="Directions" required></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary edit"

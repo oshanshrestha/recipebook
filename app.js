@@ -7,6 +7,7 @@ const pg = require('pg')
 
 
 var DBconnecter = require('./database')
+var trim = require('./trimmer')
 
 // Initialize app
 var app = express()
@@ -34,7 +35,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/', function(req, res) {
     console.info("GET request made on '/'")
     DBconnecter.getAll(function(response) {
-        res.render('index', {recipes: response.rows})
+        trim(response.rows, function(data) {
+            res.render('index', {recipes: data})
+        })
     })
 })
 

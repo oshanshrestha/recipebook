@@ -1,10 +1,11 @@
 {
   "name": "recipebook",
   "version": "1.0.0",
-  "description": "Recipe Manager made with Nodejs, Expressjs, PostGres",
+  "description": "Recipe Manager made with Nodejs, Expressjs, PostGres and Dustjs",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon"
+    "test": "nodemon",
+    "start": "PGHOST='localhost' PGUSER='LearnPostGres' PGDATABASE='recipeBook' PGPASSWORD='APPMSXPS' PGPORT=5432 nodemon"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
     "nodejs",
     "expressjs",
     "postgres",
+    "dust",
     "learn"
   ],
   "author": "Oshan Shrestha",

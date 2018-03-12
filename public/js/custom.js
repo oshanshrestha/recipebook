@@ -1,4 +1,7 @@
 $(
+    // 
+    // Add Recipe
+    // 
     $('.submit').on('click', function(e) {
         e.preventDefault()
 
@@ -31,12 +34,28 @@ $(
             alert("Sorry, if you can't give it a name, I can't add this to your recipe.")
         }
     }),
+
+
+
+
+
+    // 
+    // Populated modal for Recipe-Edit
+    // 
     $('.edit-recipe').on('click', function() {
         $('#edit-form-name').val($(this).data('name'))
         $('#edit-form-id').val($(this).data('id'))
         $('#edit-form-ingredients').val($(this).data('ingredients'))
         $('#edit-form-directions').val($(this).data('directions'))
     }),
+
+
+
+
+
+    // 
+    // Edit Recipe
+    // 
     $('.edit').on('click', function(e) {
         e.preventDefault()
 
@@ -69,8 +88,16 @@ $(
         } else {
             alert("Sorry, if you can't give it a name, I can't add this to your recipe.")
         }
-
     }),
+
+
+
+
+
+
+    // 
+    // Delete Recipe
+    // 
     $('.delete-recipe').on('click', function(e) {
         e.preventDefault()
 
@@ -78,7 +105,7 @@ $(
             id: $(this).data('id')
         }
 
-        if (confirm('Delete recipe "' + $(this).data('name').trim() + '"?')) {
+        if (confirm('Delete recipe "' + $(this).data('name') + '"?')) {
             $.ajax({
                 type: 'POST',
                 url: './delete',
@@ -89,5 +116,4 @@ $(
             })
         }
     })
-
 )
